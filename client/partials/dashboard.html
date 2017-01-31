@@ -1,0 +1,22 @@
+<a href="#!/">Logout</a>
+<h1>Doctor's Appointments</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Patient Name</th>
+    <th>Complain</th>
+  </tr>
+
+  <tr ng-repeat="appointment in appointments | orderBy: '+date'| filter: filter track by $index">
+    <input type="text" ng-model="filter" placeholder="Search">
+    <td>{{appointment.date | date: "MM/dd/yyyy"}}</td>
+    <td>{{appointment.time | date: "hh:mm:a"}}</td>
+    <td>{{appointment._user.name}}</td>
+    <td>{{appointment.complain}}</td>
+    <td><button ng-click = "delete(appointment._id)" type="button">Cancel</button></td>
+  </tr>
+</table>
+
+<a href="#!/newAppointment">Add new Appointment</a>

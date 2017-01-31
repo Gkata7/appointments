@@ -1,0 +1,9 @@
+<h1>New Appointment</h1>
+
+<form ng-submit="create()">
+  Date: <input type="date" ng-model="appointment.date" min="2017-30-01">
+  Time: <input type="time" ng-model="appointment.time" min="08:00:00" max="17:00:00" required>
+  Complain: <textarea type="text" ng-model="appointment.complain"></textarea>
+  <input type="submit" value="Add Appointment" >
+  <a href="#!/dashboard"><button type="submit">Cancel</button></a>
+</form>
